@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mota Artu 💗</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; overflow-x:hidden;
+  font-family:"Trebuchet MS",Arial,sans-serif;
+  background:linear-gradient(135deg,#ffe5f0,#fff7fb,#e8f7ff);
+  color:#5b3b4a;
+}
+.page{min-height:100vh;display:flex;justify-content:center;align-items:center;padding:28px 16px;position:relative}
+.card{
+  width:min(760px,100%); background:rgba(255,255,255,.82);
+  border:3px solid #fff; border-radius:34px; padding:32px 22px 38px;
+  box-shadow:0 18px 50px rgba(185,105,140,.22);
+  text-align:center; position:relative; overflow:hidden;
+}
+h1{font-size:clamp(38px,10vw,72px);margin:5px 0 4px;color:#e85d91}
+.subtitle{font-size:clamp(18px,4vw,25px);margin:0 0 18px}
+.panda-row{font-size:42px;letter-spacing:8px;margin:10px 0}
+.message{
+  max-width:610px;margin:20px auto;padding:22px;
+  background:#fff3f8;border-radius:24px;font-size:18px;line-height:1.7;
+}
+.cake{font-size:82px;animation:bounce 1.8s infinite}
+button{
+  border:0;background:#f278a7;color:white;font-size:18px;font-weight:bold;
+  padding:14px 28px;border-radius:999px;cursor:pointer;
+  box-shadow:0 8px 20px rgba(242,120,167,.3);
+}
+button:active{transform:scale(.96)}
+#note{display:none;margin:20px auto 0;max-width:520px;background:#fff;border-radius:20px;padding:18px;font-size:17px}
+.float{position:absolute;font-size:28px;animation:float 6s ease-in-out infinite;opacity:.9}
+.f1{top:8%;left:7%}.f2{top:15%;right:8%;animation-delay:1s}.f3{bottom:12%;left:8%;animation-delay:2s}.f4{bottom:8%;right:9%;animation-delay:3s}
+.confetti{position:fixed;top:-20px;font-size:20px;animation:fall linear forwards;pointer-events:none}
+@keyframes bounce{50%{transform:translateY(-10px)}}
+@keyframes float{50%{transform:translateY(-18px) rotate(8deg)}}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg);opacity:0}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="float f1">🐼</div><div class="float f2">🎀</div>
+  <div class="float f3">🌸</div><div class="float f4">🐼</div>
+
+  <main class="card">
+    <div class="panda-row">🐼 🎀 🐼</div>
+    <div class="cake">🎂</div>
+    <h1>Happy Birthday!</h1>
+    <p class="subtitle">To my lovely sister, <b>Mota Artu</b> 💗</p>
+
+    <section class="message">
+      <b>Dear Mota Artu,</b><br><br>
+      Happy Birthday to the cutest sister ever! 🥳💖<br>
+      May your life always be filled with happiness, laughter,
+      beautiful memories and lots of love. 🌸✨<br><br>
+      Keep smiling, keep shining, and never stop being the
+      wonderful person you are. 🐼💕<br><br>
+      <b>Have the most amazing birthday! 🎂🎀</b>
+    </section>
+
+    <button onclick="showWish()">Open Birthday Wish 💌</button>
+    <div id="note">🐼💗 A big panda hug for you! 💗🐼<br><br>
+      May every little dream of yours come true. Happy Birthday, Mota Artu! ✨
+    </div>
+  </main>
+</div>
+
+<script>
+function showWish(){
+  document.getElementById("note").style.display="block";
+  for(let i=0;i<35;i++){
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.textContent=["💗","✨","🌸","🎀","🐼","💖"][Math.floor(Math.random()*6)];
+    c.style.left=Math.random()*100+"vw";
+    c.style.animationDuration=(2+Math.random()*3)+"s";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),5500);
+  }
+}
+</script>
+</body>
+</html>
